@@ -3,10 +3,8 @@ const router = express.Router();
 
 const Todo = require('./../models/Todo');
 
-	router.post('/list', async function (req, res){
-		var todo = await Todo.find({
-			userId: req.body.userId
-		});
+	router.get('/list', async function (req, res){
+		var todo = await Todo.find();
 		res.json(todo);
 	});
 	
